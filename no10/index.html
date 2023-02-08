@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:opsz,wght@8..30,400;8..30,500;8..30,700&display=swap" rel="stylesheet">
+    <title>no10</title>
+</head>
+<body>
+    <header>Практическая №10</header>
+    <div class="container">
+
+        <div class="task_card">
+            <div class="title">Задание 1</div>
+            <form action="./index.html" method = "post" name="form1">
+                <span>Длина: </span><input type="number" name="num1"><br>
+                <span>Ширина: </span><input type="number" name="num2"><br>
+                <input type="button" name="btn1" value="Вычислить" onclick="rectarea()"><br>
+                <span>Ответ: </span><input type="text" name="result" disabled><br>
+            </form>
+        </div>
+
+        <div class="task_card">
+            <div class="title">Задание 2</div>
+            <form action="./index.html" method="post" name="form2">
+                <textarea name="fio" cols="30" rows="5" disabled></textarea>
+                <ul>
+                    <li onmouseover="textareaChange(form2, 'Лобачёва Милана Евгеньевна')" onmouseout="textareaClear(form2)">Мат. методы</li>
+                    <li onmouseover="textareaChange(form2, 'Шомас Елена Александровна')" onmouseout="textareaClear(form2)">Веб-программирование</li>
+                    <li onmouseover="textareaChange(form2, 'Железняков Семён Алексеевич')" onmouseout="textareaClear(form2)">Прикладое программирование</li>
+                </ul>
+            </form>
+        </div>
+
+        <div class="task_card">
+            <div class="title">Задание 3</div>
+            <form action="./index.html" method="post" name="form3">
+               <input type="text" name="textinput" id="input" disabled>
+            </form>
+            <button class="inputOn">Включить ввод</button>
+            <button class="inputOff">Выключить ввод</button>
+        </div>
+
+        <div class="task_card">
+            <div class="title">Задание 4</div>
+            <form action="./index.html" method="post" name="form4">
+               <input type="checkbox" name="check" id="checkbox">
+               <p class="p1">Отметь меня!</p>
+            </form>
+            <p class="paragraph"></p>
+
+            <button class="btn4">Проверить чекбокс</button>
+        </div>
+
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
