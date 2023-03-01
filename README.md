@@ -1,4 +1,4 @@
-# kspguti
+# kspguti-web
  ## Практики:
  1. <b>Веб-программирование</b>
     * [Практическая №8](https://github.com/sealinerqw/kspguti/tree/main/no8)
