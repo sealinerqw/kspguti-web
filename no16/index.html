@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Практическая 16</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="no1">
+            <h4 class="title">Номер 1</h4>
+            <span @mouseover="changeText('Курсор над текстом')" @mouseleave="changeText('Курсор ушел')">{{message}}</span>
+        </div>
+        
+        <div class="no2">
+            <h4 class="title">Номер 2</h4>
+            <p id="text">{{message}}</p>
+            <input type='text' v-model="color" placeholder="Введите цвет">
+        </div>
+
+        <div class="no3">
+            <h4 class="title">Номер 3</h4>
+
+                <img v-if="show" src="./img/0.png" alt="">
+
+            <button @click="toggle">Спрятать/показать</button>
+        </div>
+
+        <div class="no4">
+            <h4 class="title">Номер 4</h4>
+            <ul>
+                <li v-for="(subject, teacher) in subjects">{{ subject }}</li>
+                <li v-for="(subject, teacher) in subjects">{{ subject }} - {{ teacher }}</li>
+              </ul>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script>
+
+        const no1 = new Vue({
+            el: '.no1',
+
+            data:{
+                message: 'Я текст'
+            },
+
+            methods:{
+               changeText(Text){
+                    this.message = Text
+               }
+            }
+
+        })
+
+        const no2 = new Vue({
+            el: '.no2',
+
+            data:{
+                message: 'Я поменяю свой цвет на введенный!',
+                color: ''
+            },
+
+            watch:{
+                color(value){
+                    let text = document.querySelector('#text')
+                     text.style.color = value
+                }
+            }
+        })
+
+        const no3 = new Vue({
+            el: '.no3',
+
+            data:{
+                show: true
+            },
+            methods:{
+                toggle(){
+                    this.show = !this.show
+                }
+            }
+        })
+
+        const no4 = new Vue({
+            el: '.no4',
+
+            data:{
+                subjects: {
+                'Веб-программирование': 'Шомас Елена Александровна',
+                'Установка и сопровождение программного обеспечения': 'Михалькова Ирина Евгеньевна',
+                'Иностранный язык': 'Карпеева Александра Сергеевна'
+                }
+            }
+        })
+
+
+    </script>
+
+</body>
+</html>
